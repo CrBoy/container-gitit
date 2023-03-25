@@ -1,10 +1,10 @@
 FROM ubuntu:22.04
+MAINTAINER CrBoy <crboy@crboy.net>
 
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends gitit \
+    && apt-get install -y --no-install-recommends gitit media-types \
     && rm -rf /var/lib/apt/lists/*
 
-COPY mime.types /etc/mime.types
 RUN git config --global init.defaultBranch main
 
 VOLUME ["/wiki"]
